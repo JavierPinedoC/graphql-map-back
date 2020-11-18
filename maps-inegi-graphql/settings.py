@@ -39,9 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'graphene_django',
     'censos',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -78,7 +80,7 @@ WSGI_APPLICATION = 'maps-inegi-graphql.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'adsoft_inegi',
+        'NAME': 'francisco_ng5',
         'USER': 'postgres',
         'PASSWORD': 'adsoft',
         'HOST': '104.198.244.0',
@@ -140,4 +142,4 @@ GRAPHENE = {
         'graphql_jwt.middleware.JSONWebTokenMiddleware',
     ],
 }
-
+CORS_ORIGIN_ALLOW_ALL = True
